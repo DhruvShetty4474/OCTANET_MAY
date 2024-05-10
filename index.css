@@ -1,0 +1,547 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+    text-transform: capitalize;
+    list-style: none;
+}
+
+body {
+    min-width: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+header,
+header .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, .9);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .9);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    margin-right: auto;
+    margin-left: 40px;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+header .navbar .nav-links li {
+    position: relative;
+    float: left;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.submenu-open {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 50px 20px 50px 20px;
+    background: rgba(0, 0, 0, .9);
+    box-shadow: 2px 10px 10px 20px rgba(0, 0, 0, .9);
+    display: none;
+}
+
+.li-e {
+    position: absolute;
+    padding: 5px 5px 5px 8px;
+    width: 200px;
+
+}
+
+.li-e-2 {
+    position: absolute;
+    padding: 5px 5px 5px 8px;
+    width: 300px;
+}
+
+/*.spark {
+max-width: 10em;
+color: ;
+margin: auto auto;
+&:hover {
+cursor: pointer;
+}
+}
+
+.u-hover--spark {
+box-sizing: border-box;
+position: relative;
+padding: 0.75em;
+&::before,
+&::after {
+content: '';
+box-sizing: border-box;
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+transform-origin: center;
+}
+
+&::before {
+border-top: 5px solid #00FFFF;
+border-bottom: 5px solid #00FFFF;
+transform: scale3d(0,1,1);
+}
+
+&::after {
+border-left: 5px solid #00FFFF;
+border-right: 5px solid #00FFFF;
+transform: scale3d(1,0,1);
+}
+
+&:hover::before,
+&:hover::after {
+transform: scale3d(1,1,1);
+transition: transform 900ms;
+}
+} */
+
+header .navbar .nav-links li .submenu-open li a {
+    width: 100%;
+
+}
+
+.navbar .nav-links a {
+    position: relative;
+    color: rgb(255, 255, 255);
+    padding: 25px 20px;
+    font-size: 25px;
+    transition: all 0.4s;
+    margin-right: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    justify-content: space-around;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+    color: rgba(253, 253, 253, 0.9);
+    text-shadow: 0 0 10px rgba(187, 247, 255, 0.9),
+        0 0 20px rgba(187, 247, 255, 0.9),
+        0 0 30px rgba(187, 247, 255, 0.9);
+    transition: all 0.4s ease;
+}
+
+.navbar a::after {
+    content: '';
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    left: 0%;
+    bottom: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s;
+}
+
+.navbar a:hover::after,
+.navbar a:focus::after {
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(187, 247, 255, 0.9),
+        0 0 20px rgba(187, 247, 255, 0.9),
+        0 0 30px rgba(187, 247, 255, 0.9);
+}
+
+
+
+.navbar .nav-links li:focus>.submenu-open,
+.navbar .nav-links li:hover>.submenu-open {
+    display: contents;
+    color: rgba(253, 253, 253, 0.9);
+}
+
+.menu-open {
+    margin-right: auto;
+    margin-left: 40px;
+    border: none;
+    background: none;
+    margin-top: 20px;
+    padding: 0;
+    float: right;
+    cursor: pointer;
+    display: none;
+}
+
+.menu-close {
+    margin-right: auto;
+    margin-left: 40px;
+    border: none;
+    background: none;
+    margin-top: 20px;
+    padding: 0;
+    float: right;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .navbar .logo {
+        margin-left: 10px;
+    }
+
+    .logo1 {
+        height: auto;
+        width: 100px;
+    }
+
+    header .navbar {
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        top: 0;
+        z-index: 999;
+        position: fixed;
+        width: 100%;
+        height: calc(100vh - 118px);
+        margin-top: 118px;
+        background: url('menuside.png') no-repeat;
+        overflow-y: auto;
+        overflow-x: auto;
+        background-size: contain;
+        right: -100%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        transition: all 0.5s;
+
+    }
+
+    .submenu-open {
+        position: relative;
+        box-shadow: none;
+        display: none;
+    }
+
+    li .li-e {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 0px 1000px 0px 90px;
+        width: auto;
+    }
+
+    .navbar .nav-links a {
+        margin-left: 160px;
+        padding: 10px;
+    }
+
+    li .li-e-2 {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        padding: 2px 1000px 0px 60px;
+        width: auto;
+    }
+
+    #check:checked~.nav-links {
+        right: -500px;
+    }
+
+    #check:not(:checked)~.menu-open {
+        display: flex;
+        transition: all 0.5s;
+    }
+
+    #check:checked~.menu-close {
+        display: flex;
+        transition: all 0.5s;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar .logo {
+        margin-left: 40px;
+    }
+
+    .logo1 {
+        height: auto;
+        width: 100px;
+    }
+
+    header .navbar {
+        position: fixed;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        top: 0;
+        z-index: 999;
+        position: fixed;
+        width: 100%;
+        height: calc(100vh - 118px);
+        margin-top: 118px;
+        background: url('menuside.png') no-repeat;
+        overflow-y: auto;
+        overflow-x: auto;
+        background-size: contain;
+        right: -100%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        transition: all 0.5s;
+
+    }
+
+    .submenu-open {
+        position: relative;
+        box-shadow: none;
+        display: none;
+    }
+
+    li .li-e {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 0px 1000px 0px 90px;
+        width: auto;
+    }
+
+    .navbar .nav-links a {
+        margin-left: 160px;
+        padding: 10px;
+    }
+
+    li .li-e-2 {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        padding: 2px 1000px 0px 60px;
+        width: auto;
+    }
+
+    #check:checked~.nav-links {
+        right: -300px;
+    }
+
+    #check:not(:checked)~.menu-open {
+        display: flex;
+        transition: all 0.5s;
+    }
+
+    #check:checked~.menu-close {
+        display: flex;
+        transition: all 0.5s;
+    }
+}
+
+@media (max-width: 425px) {
+    .navbar .logo {
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+
+    .logo1 {
+        height: auto;
+        width: 200px;
+    }
+
+    header .navbar {
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        top: 0;
+        z-index: 999;
+        position: fixed;
+        width: 100%;
+        height: calc(100vh - 118px);
+        margin-top: 118px;
+        background: url('menuside.png') no-repeat;
+        overflow-y: auto;
+        overflow-x: auto;
+        background-size: contain;
+        right: -100%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        transition: all 0.5s;
+
+    }
+
+    .submenu-open {
+        position: relative;
+        box-shadow: none;
+        display: none;
+    }
+
+    li .li-e {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 0px 1000px 0px 90px;
+        width: auto;
+    }
+
+    .navbar .nav-links a {
+        margin-left: 160px;
+        padding: 10px;
+    }
+
+    li .li-e-2 {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        padding: 2px 1000px 0px 60px;
+        width: auto;
+    }
+
+    #check:checked~.nav-links {
+        right: -200px;
+    }
+
+    #check:not(:checked)~.menu-open {
+        display: flex;
+        transition: all 0.5s;
+    }
+
+    #check:checked~.menu-close {
+        display: flex;
+        transition: all 0.5s;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar .logo {
+        margin-left: 40px;
+    }
+
+    .logo1 {
+        height: auto;
+        width: 100px;
+    }
+
+    header .navbar {
+        position: fixed;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        top: 0;
+        z-index: 999;
+        position: fixed;
+        width: 100%;
+        height: calc(100vh - 118px);
+        margin-top: 118px;
+        background: url('menuside.png') no-repeat;
+        overflow-y: auto;
+        overflow-x: auto;
+        background-size: contain;
+        right: -100%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        transition: all 0.5s;
+
+    }
+
+    .submenu-open {
+        position: relative;
+        box-shadow: none;
+        display: none;
+    }
+
+    li .li-e {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 0px 1000px 0px 90px;
+        width: auto;
+    }
+
+    .navbar .nav-links a {
+        margin-left: 160px;
+        padding: 10px;
+    }
+
+    li .li-e-2 {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        padding: 2px 1000px 0px 60px;
+        width: auto;
+    }
+
+    #check:checked~.nav-links {
+        right: -300px;
+    }
+
+    #check:not(:checked)~.menu-open {
+        display: flex;
+        transition: all 0.5s;
+    }
+
+    #check:checked~.menu-close {
+        display: flex;
+        transition: all 0.5s;
+    }
+}
+
+#video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    z-index: -1;
+}
+
+.content {
+    padding: 20px;
+    /* Adjust padding as needed */
+    /* Add background color to ensure content readability */
+    margin-top: 300px;
+    color: aqua;
+    background-color: black;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Style for social media icons */
+.footer-social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 24px;
+}
+
+.carousel-item video {
+    width: 100%;
+}

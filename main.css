@@ -1,0 +1,105 @@
+body{
+    background: url('solo-leveling-thumb.jpg');
+    background-position: top;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    object-position: top;
+    z-index: -1;
+}
+@media only screen and (max-width: 768px) {
+    .menu {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: auto;
+      max-width: 40rem;
+      height: auto;
+      background-color: var(--white);
+      transition: all 500ms ease-in-out;
+      z-index: 100;
+    }}
+
+.top-bar {
+    text-align: left;
+    text-overflow: none;
+    text-decoration: none;
+    color: #575656;
+    font-size: 25px; 
+    font-family:fantasy;
+    position: relative;
+    width: 100%;    
+    box-sizing: border-box;
+    height: 40px;
+    background: #161616;
+
+}
+
+.navbar{
+    background-color: rgba(0, 0, 0, .9);
+    color: white;
+    overflow: hidden;
+    display: flex;
+    text-align: right;
+    align-items: center;
+}
+.navbar .logo{
+    margin-right: auto;
+    border: none;
+    margin-left: 40px;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.navbar a{
+     position: relative;
+     color: rgb(255, 255, 255);
+     text-align: center;
+     padding: 25px 20px;
+     font-size: 25px;
+     transition: all 0.4s;
+     margin-right: 40px;
+     font-family:'Courier New', Courier, monospace;
+     text-decoration: none;
+ }
+
+ .navbar a:hover,
+ .navbar a:focus{
+    color: rgba(253, 253, 253, 0.9);
+    text-shadow: 0 0 10px rgba(187, 247, 255, 0.9),
+                 0 0 20px rgba(187, 247, 255, 0.9),
+                 0 0 30px rgba(187, 247, 255, 0.9);
+    transition: all 0.4s ease;
+ }
+ .navbar a::after{
+     content: '';
+     width: 100%;
+     height: 2px;
+     background: rgba(255, 255, 255, 0.9) ;
+     position: absolute;
+     left:0%;
+     bottom: 0;
+     opacity: 0;
+     pointer-events: none;
+     transition: all 0.2s;
+ }
+
+ .navbar a:hover::after,
+ .navbar a:focus::after{
+     opacity: 1;
+     box-shadow: 0 0 10px rgba(187, 247, 255, 0.9),
+     0 0 20px rgba(187, 247, 255, 0.9),
+     0 0 30px rgba(187, 247, 255, 0.9);
+ }
